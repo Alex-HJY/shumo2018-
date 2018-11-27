@@ -63,8 +63,8 @@ def back_test(d=pd.DataFrame(), y_name='', start_year='2011', end_year='2018'):
 
 if __name__ == '__main__':
     back_test(dff, '000188_Close')
-    # back_test(dff, 'VOLUME')
-    # back_test(dff, 'total_balance')
-    # back_test(dff, 'PE')
-    # back_test(dff, 'PB')
+    back_test(dff, 'VOLUME')
+    back_test(dff, 'total_balance')
+    back_test(dff, 'PE')
+    back_test(dff, 'PB')
     dff.to_csv('test.csv',encoding='utf-8-sig')
