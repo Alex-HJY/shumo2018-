@@ -8,9 +8,13 @@ def get_data():
     df2.set_index('DateTime', inplace=True)
     df3 = pd.read_csv('./data/rzrq.csv', encoding='utf-8-sig')
     df3.set_index('DateTime', inplace=True)
+    df5 = pd.read_csv('./data/shibor.csv', encoding='utf-8-sig')
+    df5.set_index('DateTime', inplace=True)
     del df['id']
     df=df.join(df2)
+    df5.index = pd.DatetimeIndex(df5.index)
     df3.index = pd.DatetimeIndex(df3.index)
+    df = df.join(df5)
     df.index=pd.DatetimeIndex(df.index)
     df = df.join(df3)
     df4 = pd.read_csv('./data/bozhi.csv', encoding='utf-8-sig')
